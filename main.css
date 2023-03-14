@@ -1,0 +1,13 @@
+#time {
+  font-size: 70px;
+}
+
+#stop {
+  pointer-events: none;
+  opacity: .6;
+}
+
+#reset {
+  pointer-events: none;
+  opacity: .6;
+}
