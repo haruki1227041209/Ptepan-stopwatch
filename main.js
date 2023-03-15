@@ -9,15 +9,11 @@
     let intervalId = null;
     
     function showTime() {
-      const msa = pasttime % 1000;
-      const ms = Math.floor(msa / 100);
-      const s1a = pasttime % 10000;
-      const s1 = Math.floor(s1a / 1000);
-      const s2a = pasttime % 100000;
-      const s2 = Math.floor(s2a / 10000);
-      const s3a = pasttime % 1000000;
-      const s3 = Math.floor(s3a / 100000);
-      timeElement.innerHTML = `${s3}:${s2}:${s1}:${ms}`;
+      const ms = Math.floor((pasttime % 1000) / 100);
+      const s = Math.floor(pasttime / 1000) % 60;
+      const m = Math.floor(pasttime / (1000 * 60)) % 60;
+      const h = Math.floor(pasttime / (1000 * 60 * 60));
+      timeElement.innerHTML = `${h}:${m}:${s}:${ms}`;
     }
     
     start.addEventListener('click',function() {
